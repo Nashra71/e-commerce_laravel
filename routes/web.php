@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/',[PagesController::class,'index'])->name('index');
+Route::get('/product',[PagesController::class,'product'])->name('product');
+Route::get('/contact',[PagesController::class,'contact'])->name('contact');
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/',[AdminController::class,'index'])->name('admin.index');
+    Route::get('/create',[AdminController::class,'create'])->name('admin.product.create');
+    Route::post('/store',[AdminController::class,'store'])->name('admin.product.store');
+
 });
+

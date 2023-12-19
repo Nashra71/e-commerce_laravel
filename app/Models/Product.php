@@ -9,7 +9,8 @@ use App\Models\ProductImage;
 
 class Product extends Model
 {
-   public function image(){
+
+   public function images(){
     return $this->hasMany('App\Models\ProductImage');
    }
 

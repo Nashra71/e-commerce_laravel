@@ -13,9 +13,21 @@ class AdminController extends Controller
  public function index(){
 return view('admin.pages.index');
  }
+ public function manage_product(){
+     $products= Product::orderBy('id','desc')->get();
+     return view('admin.pages.products.index',compact('products'));
+    }
+
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        return view('admin.pages.products.edit',compact('product'));
+    }
+
+
  public function create(){
-    return view('admin.pages.products.create');
-     }
+     return view('admin.pages.products.create');
+    }
      public function store(Request $request){
     //    $this->validate($request, ['title'=>'required|max:150']);
         $request->validate([
@@ -36,7 +48,7 @@ return view('admin.pages.index');
         $product->admin_id=1;
         $product->save();
 
-         //  productImage Model insert image
+        //  productImage Model insert image
 
         if(count($request->product_image)>0){
             foreach ($request->product_image??[] as $image){
@@ -52,12 +64,12 @@ return view('admin.pages.index');
                 $product_image->save();
             }
         }}
-        return redirect()->route('admin.product.create');
-    }
+        return redirect()->route('admin.pages.products.index');
+     }
 }
 // if($request->hasFile('product_image')){
-//     $image=$request->file('product_image');
-//     $img=time() .'.'. $image->getClientOriginalExtension();
+    //     $image=$request->file('product_image');
+    //     $img=time() .'.'. $image->getClientOriginalExtension();
 //     $location= public_path('images/products/'.$img);
 //     Image::make($image)->save($location);
 
@@ -66,3 +78,4 @@ return view('admin.pages.index');
 //     $product_image->image=$img;
 //     $product_image->save();
 // }
+

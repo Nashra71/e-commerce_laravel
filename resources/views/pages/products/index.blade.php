@@ -5,7 +5,7 @@
         <h3>All Product</h3>
         <div class="row">
             @foreach ($products as $product)
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card">
                                 {{-- 1tar beshi sobi upload kora jabe na 1ta product a --}}
                                 @php

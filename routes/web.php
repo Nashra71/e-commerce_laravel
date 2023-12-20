@@ -25,8 +25,14 @@ Route::get('/contact',[PagesController::class,'contact'])->name('contact');
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/',[AdminController::class,'index'])->name('admin.index');
-    Route::get('/create',[AdminController::class,'create'])->name('admin.product.create');
-    Route::Post('/store',[AdminController::class,'store'])->name('admin.product.store');
+    Route::get('/product',[AdminController::class,'manage_product'])->name('admin.products');
+
+    Route::get('/product/create',[AdminController::class,'create'])->name('admin.product.create');
+    Route::Post('/product/store',[AdminController::class,'store'])->name('admin.product.store');
+
+    Route::get('/product/edit/{id}',[AdminController::class,'edit'])->name('admin.product.edit');
+    Route::Post('/product/update/{id}',[AdminController::class,'update'])->name('admin.product.update');
+    Route::delete('/product/delete/{id}',[AdminController::class,'delete'])->name('admin.product.delete');
 
 });
 

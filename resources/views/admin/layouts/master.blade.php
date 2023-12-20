@@ -97,7 +97,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="{{asset('')}}assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="{{asset('assets/images/faces/face12.jpg')}}" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -106,7 +106,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="{{asset('')}}assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="{{asset('assets/images/faces/face1.jpg')}}" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -253,7 +253,7 @@
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
+                    <a class="nav-link" href="{{('admin.products')}}"> Products </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="pages/samples/login.html"> Login </a>

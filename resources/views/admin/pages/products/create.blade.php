@@ -8,8 +8,9 @@
                 Add Product
             </div>
             <div class="card-body">
-                <form action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    {{-- {{method_field("put")}} --}}
                     @include('admin.partials.messages')
                     <div class="form-group">
                         <label >Title</label>

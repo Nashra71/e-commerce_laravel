@@ -22,15 +22,17 @@
     <link rel="stylesheet" href="{{asset('assets/css/demo_1/style.css')}}">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}" />
+    <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html">
+          <a class="navbar-brand brand-logo" href="{{route('admin.index')}}">
             <img src="{{asset('assets/images/logo.svg')}}" alt="logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
+          <a class="navbar-brand brand-logo-mini" href="{{route('admin.index')}}">
             <img src="{{asset('assets/images/logo-mini.svg')}}" alt="logo" /> </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -195,35 +197,33 @@
             </li>
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="{{route('admin.index')}}">
                 <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title" href="{{route('admin.index')}}">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Basic UI Elements</span>
+                <span class="menu-title">Manage Product</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                    <a class="nav-link" href="{{route('admin.product.create')}}">Create Product</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
+                    <a class="nav-link" href="{{route('admin.product')}}">Product List</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
-                  </li>
+
                 </ul>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/forms/basic_elements.html">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">Form elements</span>
+                <span class="menu-tite">Formmm elements</span>
               </a>
             </li>
             <li class="nav-item">
@@ -291,5 +291,7 @@
     <script src="{{asset('assets/js/demo_1/dashboard.js')}}"></script>
     <!-- End custom js for this page-->
     <script src="{{asset('assets/js/shared/jquery.cookie.js')}}" type="text/javascript"></script>
+    {{-- i created for delete alert --}}
+    <script src="resources/js/script"></script>
   </body>
 </html>

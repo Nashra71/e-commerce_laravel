@@ -35,10 +35,10 @@
 
                             <td><img src="{{ asset('images/categories/'. $category->image)}}"></td>
 
-                            {{-- category model e parent function nichi --}}
+                            {{-- category model er parent function nichi --}}
                             <td>
                             @if($category->parent == NULL)
-
+                                Primary Category
                             @else
                                 {{$category->parent->name}}
                             @endif

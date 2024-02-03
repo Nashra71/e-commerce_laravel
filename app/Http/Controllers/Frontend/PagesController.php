@@ -18,7 +18,9 @@ class PagesController extends Controller
         $products=Product::orWhere('title','like','%'.$search.'%')
         ->orWhere('description','like','%'.$search.'%')
         ->orWhere('price','like','%'.$search.'%')
-        ->orWhere('quantity','like','%'.$search.'%')->paginate(9);
+        ->orWhere('quantity','like','%'.$search.'%')
+        ->orderBy('id','desc')
+        ->paginate(9);
 
         return view('frontend.pages.products.search',compact('search','products'));
     }

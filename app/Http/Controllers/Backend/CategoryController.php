@@ -70,7 +70,7 @@ class CategoryController extends Controller
         $category->parent_id=$request->parent_id;
 
     //    easier method
-        if(count($request->image)>0){
+        if(($request->image)>0){
             //delete the old image from folder
             if(File::exists('images/categories/'.$category->image)){
                 File::delete('images/categories/'.$category->image);

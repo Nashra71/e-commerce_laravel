@@ -16,12 +16,12 @@
                     @endif
                     <div class="form-group">
                         <label >Name</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" name="title" value="{{$category->name}}" >
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{$category->name}}" >
 
                         {{-- We can also show error this way,its nice to me --}}
-                                @error('name')
+                                {{-- @error('name')
                                 <strong class="text-danger">{{$message}}</strong>
-                                @enderror
+                                @enderror --}}
 
                     </div>
                     <div class="form-group">
